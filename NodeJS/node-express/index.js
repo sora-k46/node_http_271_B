@@ -7,6 +7,9 @@ const morgan = require('morgan');
 
 const bodyParser = require('body-parser');
 
+const dishRouter=require('./routes/dishRouter');
+app.use('/dishes',dishRouter);
+
 app.use(bodyParser.json());
 app.all('/dishes', (req, res, next) => {
   res.statusCode = 200;
